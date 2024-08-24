@@ -5,15 +5,11 @@ const App = () => {
     
     const [input,setIntput]= useState("");
 
-  const onChangeText=(event)=>{
-    
-    setIntput(event.target.value);
-  }
-  return (
+return (
     <div>
        <p>Enter your name:</p>
-        <input onChange={onChangeText}/>
-       <p>{`Hello ${input}!`}</p>
+        <input type="text" onChange={(e)=>{setIntput(e.target.value)}}/>
+       {input && <p>Hello {input}!</p>}
     </div>
   )
 }
